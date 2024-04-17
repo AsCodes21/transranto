@@ -1,6 +1,7 @@
 import discord
 from discord.ext import commands
 import googletrans
+import os
 
 translator = googletrans.Translator()
 
@@ -168,4 +169,4 @@ async def translateTo(ctx,lang,*, text):
 #     if channel != "portuguese":
 #         await output.send(embed = discord.Embed(title = f"{author} says on {channel}",description = translated.text,color = 0x6aa84f))
 
-client.run("MTIxNDkyNjQyMjIxMzI2MzQ1MA.Gttu3I.MpVoxg1-L-0NGRie5VYlNoeQeCeLopXQMd2iSA")
+client.run(os.environ.get("token"))
