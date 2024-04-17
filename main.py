@@ -2,6 +2,7 @@ import discord
 from discord.ext import commands
 import googletrans
 import os
+from keep_alive import keep_alive
 
 translator = googletrans.Translator()
 
@@ -169,4 +170,5 @@ async def translateTo(ctx,lang,*, text):
 #     if channel != "portuguese":
 #         await output.send(embed = discord.Embed(title = f"{author} says on {channel}",description = translated.text,color = 0x6aa84f))
 
+keep_alive()
 client.run(os.environ.get("token"))
