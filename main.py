@@ -145,7 +145,7 @@ async def translate(ctx,*, text):
 
 @client.command()
 async def Hello(ctx):
-    ctx.send("Hello")
+    await ctx.send("Hello")
 
 @client.command()
 async def translateTo(ctx,lang,*, text):
