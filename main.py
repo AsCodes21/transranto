@@ -6,7 +6,7 @@ from keep_alive import keep_alive
 
 translator = googletrans.Translator()
 
-client = commands.Bot(command_prefix="!", intents=discord.Intents.all())
+client = commands.Bot(command_prefix="&", intents=discord.Intents.all())
 
 @client.event
 async def on_ready():
@@ -126,7 +126,6 @@ languages = {
 }
 
 reverse_language = {value: key for key, value in languages.items()}
-
 @client.command()
 async def translate(ctx,*, text):
     if not text:
@@ -143,6 +142,10 @@ async def translate(ctx,*, text):
 
     # Send the translated message
     await ctx.send(embed = embed)
+
+@client.command()
+async def Hello(ctx):
+    ctx.send("Hello")
 
 @client.command()
 async def translateTo(ctx,lang,*, text):
